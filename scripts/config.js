@@ -37,50 +37,50 @@ const resolve = p => {
 
 const builds = {
   // Runtime+compiler CommonJS build (CommonJS)
-  'web-full-cjs-dev': {
-    entry: resolve('web/entry-runtime-with-compiler.js'),
-    dest: resolve('dist/vue.common.dev.js'),
-    format: 'cjs',
-    env: 'development',
-    alias: { he: './entity-decoder' },
-    banner
-  },
-  'web-full-cjs-prod': {
-    entry: resolve('web/entry-runtime-with-compiler.js'),
-    dest: resolve('dist/vue.common.prod.js'),
-    format: 'cjs',
-    env: 'production',
-    alias: { he: './entity-decoder' },
-    banner
-  },
+  // 'web-full-cjs-dev': {
+  //   entry: resolve('web/entry-runtime-with-compiler.js'),
+  //   dest: resolve('dist/vue.common.dev.js'),
+  //   format: 'cjs',
+  //   env: 'development',
+  //   alias: { he: './entity-decoder' },
+  //   banner
+  // },
+  // 'web-full-cjs-prod': {
+  //   entry: resolve('web/entry-runtime-with-compiler.js'),
+  //   dest: resolve('dist/vue.common.prod.js'),
+  //   format: 'cjs',
+  //   env: 'production',
+  //   alias: { he: './entity-decoder' },
+  //   banner
+  // },
   // Runtime+compiler ES modules build (for bundlers)
-  'web-full-esm': {
-    entry: resolve('web/entry-runtime-with-compiler.js'),
-    dest: resolve('dist/vue.esm.js'),
-    format: 'es',
-    alias: { he: './entity-decoder' },
-    banner
-  },
+  // 'web-full-esm': {
+  //   entry: resolve('web/entry-runtime-with-compiler.js'),
+  //   dest: resolve('dist/vue.esm.js'),
+  //   format: 'es',
+  //   alias: { he: './entity-decoder' },
+  //   banner
+  // },
   // Runtime+compiler ES modules build (for direct import in browser)
-  'web-full-esm-browser-dev': {
-    entry: resolve('web/entry-runtime-with-compiler.js'),
-    dest: resolve('dist/vue.esm.browser.js'),
-    format: 'es',
-    transpile: false,
-    env: 'development',
-    alias: { he: './entity-decoder' },
-    banner
-  },
+  // 'web-full-esm-browser-dev': {
+  //   entry: resolve('web/entry-runtime-with-compiler.js'),
+  //   dest: resolve('dist/vue.esm.browser.js'),
+  //   format: 'es',
+  //   transpile: false,
+  //   env: 'development',
+  //   alias: { he: './entity-decoder' },
+  //   banner
+  // },
   // Runtime+compiler ES modules build (for direct import in browser)
-  'web-full-esm-browser-prod': {
-    entry: resolve('web/entry-runtime-with-compiler.js'),
-    dest: resolve('dist/vue.esm.browser.min.js'),
-    format: 'es',
-    transpile: false,
-    env: 'production',
-    alias: { he: './entity-decoder' },
-    banner
-  },
+  // 'web-full-esm-browser-prod': {
+  //   entry: resolve('web/entry-runtime-with-compiler.js'),
+  //   dest: resolve('dist/vue.esm.browser.min.js'),
+  //   format: 'es',
+  //   transpile: false,
+  //   env: 'production',
+  //   alias: { he: './entity-decoder' },
+  //   banner
+  // },
   // Runtime+compiler development build (Browser)
   'web-full-dev': {
     entry: resolve('web/entry-runtime-with-compiler.js'),
@@ -91,14 +91,14 @@ const builds = {
     banner
   },
   // Runtime+compiler production build  (Browser)
-  'web-full-prod': {
-    entry: resolve('web/entry-runtime-with-compiler.js'),
-    dest: resolve('dist/vue.min.js'),
-    format: 'umd',
-    env: 'production',
-    alias: { he: './entity-decoder' },
-    banner
-  },
+  // 'web-full-prod': {
+  //   entry: resolve('web/entry-runtime-with-compiler.js'),
+  //   dest: resolve('dist/vue.min.js'),
+  //   format: 'umd',
+  //   env: 'production',
+  //   alias: { he: './entity-decoder' },
+  //   banner
+  // },
 }
 
 function genConfig (name) {
