@@ -6,7 +6,7 @@ const replace = require('rollup-plugin-replace')
 const node = require('rollup-plugin-node-resolve')
 const flow = require('rollup-plugin-flow-no-whitespace')
 const version = process.env.VERSION || require('../package.json').version
-const weexVersion = process.env.WEEX_VERSION || require('../packages/weex-vue-framework/package.json').version
+// const weexVersion = process.env.WEEX_VERSION || require('../packages/weex-vue-framework/package.json').version
 const featureFlags = require('./feature-flags')
 
 const banner =
@@ -125,8 +125,8 @@ function genConfig (name) {
 
   // built-in vars
   const vars = {
-    __WEEX__: !!opts.weex,
-    __WEEX_VERSION__: weexVersion,
+    // __WEEX__: !!opts.weex,
+    // __WEEX_VERSION__: weexVersion,
     __VERSION__: version
   }
   // feature flags
