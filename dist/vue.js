@@ -47,20 +47,57 @@
 
     var inBrowser = typeof window !== 'undefined';
 
+    var VNode = function VNode(tag, data, children, text, elm, context, componentOptions, asyncFactory) {
+        this.tag = tag;
+        this.data = data;
+        this.children = children;
+        this.text = text;
+        this.elm = elm;
+        this.context = context;
+        this.componentOptions = componentOptions;
+        this.asyncFactory = asyncFactory;
+        this.componentInstance = undefined;
+    };
+
+    var prototypeAccessors = { child: { configurable: true } };
+    prototypeAccessors.child.get = function () {
+        return this.componentInstance
+    };
+
+    Object.defineProperties( VNode.prototype, prototypeAccessors );
+
+    function createEmptyVNode(text) {
+        var node = new VNode();
+        node.text = text;
+        return node
+    }
+
     function mountComponent(vm, el) {
         vm.$el = el;
-        console.log(vm);
+        // if options里没有render函数传进
+        if (!vm.$options.render) {
+            vm.$options.render  = createEmptyVNode;
+            console.log(vm);
+        }
         return vm
     }
 
     // /*  */
 
+
+    // public mount method
     Vue.prototype.$mount = function (el) {
         el = el && inBrowser ? query(el) : undefined;
         return mountComponent(this, el)
     };
 
     /*  */
+
+    var mount = Vue.prototype.$mount;
+
+    Vue.prototype.$mount = function (el) {
+        return mount.call(this, el)
+    };
 
     return Vue;
 
