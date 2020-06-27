@@ -10,6 +10,9 @@ import { mountComponent } from 'core/instance/lifecycle'
 
 import { noop } from "shared/util";
 
+import { patch } from './patch'
+
+
 Vue.prototype.__patch__ = inBrowser ? patch : noop
 
 // public mount method

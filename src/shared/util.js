@@ -5,5 +5,7 @@ export function isDef(v) {
 }
 
 // 空函数
-export function noop(a,b,c) {}
+export function noop(a,b,c) {};
 
+// 返回相同值
+export const identity = (_) => _;

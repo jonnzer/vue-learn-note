@@ -6,16 +6,31 @@
 </head>
 <body>
 <div id="app">{{message}}</div>
-<script src="../dist/vue.js"></script>
+<div id="containter">11111</div>
+<script src="../dist/vue-test.js"></script>
 <script>
-    let a = new Vue({
+    // let a = new Vue({
+    //     el: '#app',
+    //     render(createElement) {
+    //         return createElement('div', {
+    //             attrs: {
+    //                 id: '#app'
+    //             }
+    //         },this.message)
+    //     },
+    //     data: {
+    //         message: 'Hello Vue!'
+    //     }
+    //
+    // })
+    let app = new Vue({
         el: '#app',
-        data: {
-            message: 'Hello Vue!'
+        data() {
+            return {
+                message: '123'
+            }
         }
-
     })
-    console.log(a)
 </script>
 </body>
 </html>

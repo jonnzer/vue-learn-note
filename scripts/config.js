@@ -84,7 +84,7 @@ const builds = {
   // Runtime+compiler development build (Browser)
   'web-full-dev': {
     entry: resolve('web/entry-runtime-with-compiler.js'),
-    dest: resolve('dist/vue.js'),
+    dest: resolve('dist/vue-test.js'),
     format: 'umd',
     env: 'development',
     alias: { he: './entity-decoder' },

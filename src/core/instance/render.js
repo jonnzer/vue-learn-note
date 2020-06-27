@@ -5,9 +5,9 @@
 import { createElement } from "../vdom/create-element";
 
 export function renderMixin(Vue) {
-    Vue.prototype._render = function () {
+    Vue.prototype._render = function () { // 生成vnode
         const vm = this
-        const { render, _parentVnode } = vm.$options
+        const { render, _parentVnode } = vm.$options // 出错点，render没定义好
         vm.$vnode = _parentVnode
         let vnode
         vnode = render.call(vm._renderProxy, vm.$createElement)
@@ -18,5 +18,6 @@ export function renderMixin(Vue) {
 export function initRender(vm) { // vue init 初始化render
     vm._vnode = null
     const options = vm.$options
-    vm.$createElement = (a, b, c, d) => createElement(vm,a,b,c,d)
+    vm._c = (a, b, c, d) => createElement(vm, a ,b, c, d) // _c 和 createElement 是一样的
+    vm.$createElement = (a, b, c, d) => createElement(vm, a, b, c, d)
 }
