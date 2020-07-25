@@ -1,6 +1,6 @@
 
 // entry-runtime-with-compiler.js
-//  compileToFunctions( template,options,this )  留意下这个函数是在哪里设置参数的
+//  compileToFunctions( template,options,this )  函数是在 src/compiler/to-function.js 文件定义的
 
 import { baseOptions } from './options' // web render options
 

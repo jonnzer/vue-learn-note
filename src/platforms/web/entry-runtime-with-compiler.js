@@ -2,6 +2,7 @@
 
 import Vue from './runtime/index'
 import { query } from "./util";
+import { compileToFunctions } from "./compiler/index";
 
 const mount = Vue.prototype.$mount // 缓存了 rumtime/index.js 的 public method $mount
 
@@ -57,7 +58,11 @@ Vue.prototype.$mount = function (el) {
         }
         if (template) {
             // compileToFunctions 登场
+            const { render, staticRenderFns } = compileToFunctions(template,{
 
+            },this)
+            options.render = render
+            options.staticRenderFns = staticRenderFns
         }
     }
     return mount.call(this, el)

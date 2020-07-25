@@ -5,7 +5,7 @@
  * @param compile: function
  */
 export function createCompileToFunctionFn(compile) {
-    return function compileToFunctions() {
+    return function compileToFunctions(template, options, vm) {
 
     }
 }
