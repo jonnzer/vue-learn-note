@@ -2,11 +2,11 @@ import { initMixin } from './init'
 import { renderMixin } from "./render";
 import { lifecycleMixin } from "./lifecycle";
 
-function Vue (options) {
+function Vue(options) {
   if (process.env.NODE_ENV !== 'production' &&
     !(this instanceof Vue)
   ) {
-    warn('Vue is a constructor and should be called with the `new` keyword')
+    warn('Vue是一个构造函数，你需要用new关键字去调用它～')
   }
   this._init(options)
 }

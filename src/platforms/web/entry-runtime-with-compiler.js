@@ -11,7 +11,7 @@ const idToTemplate = function (id) { // convert id to template
     return el && el.innerHTML
 }
 
-function getOuterHTML (el) { // 返回html结构
+function getOuterHTML(el) { // 返回html结构
     if (el.outerHTML) {
         return el.outerHTML
     } else {
@@ -33,7 +33,7 @@ function getOuterHTML (el) { // 返回html结构
  */
 Vue.prototype.$mount = function (el) {
     el = el && query(el) // transform el to dom
-    if (el === document.body || el === document.documentElement ) { // body or html not allowed to render el
+    if (el === document.body || el === document.documentElement) { // body or html not allowed to render el
         console.warn(`Do not mount Vue to <html> or <body> - mount to normal elements instead.`)
     }
     const options = this.$options
@@ -58,9 +58,9 @@ Vue.prototype.$mount = function (el) {
         }
         if (template) {
             // compileToFunctions 登场
-            const { render, staticRenderFns } = compileToFunctions(template,{
+            const { render, staticRenderFns } = compileToFunctions(template, {
 
-            },this)
+            }, this)
             options.render = render
             options.staticRenderFns = staticRenderFns
         }
